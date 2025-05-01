@@ -93,3 +93,14 @@ class Linked_List:
             print(f"Item {item} não encontrado na lista.")
             return
         return found
+        
+    def reverse(self):
+        prev = None
+        curr = self.head
+        while curr != None:
+            temp = curr.getNext()
+            curr.setNext(prev)
+            prev = curr
+            curr = temp
+        self.head = prev
+        return self.head
